@@ -1,14 +1,39 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <title>QR ile Ses</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QR Ses</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>QR ile Ses Projesi</h1>
-  <ul>
-    <li><a href="ses1.html">Ses 1</a></li>
-    <li><a href="ses2.html">Ses 2</a></li>
-  </ul>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>QR Ses</h1>
+        <p>QR okut → sayfa açılsın → sesi büyük ve rahat kontrol et.</p>
+      </div>
+      <div class="badge">🔊 Büyük kontrol • 📱 Mobil uyumlu</div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Ses 1</h2>
+        <p>QR okutunca bu sayfa açılır ve oynatmaya hazırsın.</p>
+        <button class="btn" onclick="location.href='ses1.html'">▶ Ses 1’i Aç</button>
+      </div>
+
+      <div class="card">
+        <h2>Ses 2</h2>
+        <p>İkinci ses için ayrı sayfa. Aynı tasarım, aynı kolaylık.</p>
+        <button class="btn" onclick="location.href='ses2.html'">▶ Ses 2’yi Aç</button>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:16px">
+      İpucu: iPhone/Android bazı tarayıcılarda “otomatik çalma” engellenebilir.
+      Bu yüzden ses sayfasında büyük bir “Oynat” butonu var.
+    </p>
+  </div>
 </body>
 </html>
