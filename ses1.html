@@ -1,9 +1,50 @@
 <!doctype html>
 <html lang="tr">
-<head><meta charset="utf-8"><title>Ses 1</title></head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ses 1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-  <audio controls preload="metadata">
-    <source src="audio/ses1.mp4" type="audio/mp4">
-  </audio>
+  <main class="page">
+    <div class="card">
+      <h1>Ses 1</h1>
+
+      <audio id="player" controls preload="metadata" playsinline>
+        <source src="audio/ses1.mp4" type="audio/mp4" />
+        Tarayıcınız audio öğesini desteklemiyor.
+      </audio>
+
+      <button id="btn" class="btn">▶ Oynat</button>
+      <p id="msg" class="hint"></p>
+    </div>
+  </main>
+
+  <script>
+    const audio = document.getElementById("player");
+    const msg = document.getElementById("msg");
+
+    // garanti ayar
+    audio.muted = false;
+    audio.volume = 1;
+
+    document.getElementById("btn").addEventListener("click", async () => {
+      try {
+        audio.muted = false;
+        audio.volume = 1;
+        await audio.play();
+        msg.textContent = "";
+      } catch (e) {
+        msg.textContent = "Oynatma engellendi veya dosya bulunamadı. F12 > Network/Console kontrol et.";
+        console.error(e);
+      }
+    });
+
+    // hızlı teşhis: dosya gerçekten yükleniyor mu?
+    audio.addEventListener("error", () => {
+      msg.textContent = "Ses dosyası yüklenemedi (yol yanlış olabilir). F12 > Network'te 404 var mı bak.";
+    });
+  </script>
 </body>
 </html>
