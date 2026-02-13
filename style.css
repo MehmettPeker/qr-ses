@@ -26,7 +26,7 @@ body{
   backdrop-filter: blur(10px);
 }
 
-h1{margin:0 0 8px 0;font-size:28px}
+h1{margin:0 0 8px 0;font-size:28px text-align:center}
 p{margin:0 0 16px 0;color:var(--muted);line-height:1.5}
 
 .btn{
@@ -52,3 +52,8 @@ input[type="range"]{width:100%}
 .hint{color:var(--muted)}
 .back{display:inline-block;margin-bottom:12px;color:var(--txt);text-decoration:none;opacity:.85}
 .back:hover{opacity:1}
+
+footer {
+  padding: 35px;
+  text-align: center;
+}
